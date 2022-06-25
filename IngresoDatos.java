@@ -22,6 +22,8 @@ public class IngresoDatos extends RegistroYMuestraDatos{
         lista.add(cabecera);
         lista.add(region);
 
+        this.registrarDatosVectores();
+
     }
 
 

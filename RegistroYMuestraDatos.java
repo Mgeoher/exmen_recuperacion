@@ -11,6 +11,14 @@ public class RegistroYMuestraDatos {
     protected String cabecera;
     protected String region;
     protected String codigo1;
+    
+    String [] matrisDepartametos;
+    protected int indice;
+    
+    public RegistroYMuestraDatos(){
+        this.matrisDepartametos = new String[10];
+        this.indice = 0;
+    }
 
     public void mostrarLista() { // muestra el historial en lista
         for (int i = 0; i < this.lista.size(); i++) {
@@ -30,8 +38,7 @@ public class RegistroYMuestraDatos {
         }
     }
 
-
-    public void busquedaListaNumero() {
+    public void busquedaListaNumero() { // es la busuqeda de los datos en la lista por numero
         System.out.println("Ingrese el numero del departamento para la busqueda");
         codigo1 = sc.nextLine();
 
@@ -42,6 +49,29 @@ public class RegistroYMuestraDatos {
             lista.add(codigo1);
         }
     }
+
+    public void registrarDatosVectores() { // registra los datos con vectores
+
+        
+        this.matrisDepartametos[indice] = "Codigo: "+codigo1+" --> " +"Departamento: "+departamento+" --> " +"Numero de municipios: " + municipios + " --> " + "Cabecera Departamental: " +  cabecera
+                + " --> "+ "Region: " + region;
+
+        this.indice = this.indice + 1;
+
+
+    }
+    public void mostrarDatosVectores() { // muestra el historial con vectores
+
+        
+        for(int i = 0; i<this.matrisDepartametos.length; i++){
+            if(this.matrisDepartametos[i]!=null){
+                System.out.println(matrisDepartametos[i]);
+            }
+        }
+
+
+    }
+    
 
 }
 
