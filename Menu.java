@@ -15,6 +15,7 @@ public class Menu extends IngresoDatos{
         do {
             System.out.println("Escibe una opcion");
             System.out.println("1-Ingresar Datos "+"2-Historial de Datos en forma de lista "+ "3-busqueda de datos en lista "+ "4-Mostrar datos por medio de Vectores");
+            System.out.println("5-Busqueda de datos por vectores ");
             int opcion = sc.nextInt();
 
             switch (opcion) {
@@ -37,8 +38,6 @@ public class Menu extends IngresoDatos{
                         case 2:
                             this.busquedaListaNumero();
                         break;
-
-
                         default: System.out.println("Solo numeros 1 y 2");
                     }
                 }while (regresar);
@@ -46,6 +45,10 @@ public class Menu extends IngresoDatos{
                 case 4:
                     this.mostrarDatosVectores();
                     break;
+                case 5:
+                    this.buscarVector();
+                    break;
+
                 case 0:
                     System.out.println("Vuelva pronto");
                     salir = true;
