@@ -7,6 +7,7 @@ public class Menu extends IngresoDatos{
 
     Scanner sc = new Scanner(System.in);
     public boolean salir = false;
+    public boolean regresar = true;
 
 
     List lista = new ArrayList<>();
@@ -22,6 +23,18 @@ public class Menu extends IngresoDatos{
                     break;
                 case 2:
                   this.mostrarLista();
+                    do {
+                        System.out.println("se encuentra el dato? "+ "1-si regresar " + "2- no " );
+                        int op1 = sc.nextInt();
+                        switch (op1){
+                            case 1: regresar = false;
+                                break;
+                            case 2:this.busquedaLista();
+                                break;
+                            default: System.out.println("Solo numeros 1 y 2");
+                        }
+
+                    }while (regresar);
                     break;
                 case 0:
                     System.out.println("Vuelva pronto");

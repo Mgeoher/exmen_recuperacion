@@ -4,6 +4,8 @@ public class IngresoDatos extends RegistroYMuestraDatos{
 
     Scanner sc = new Scanner(System.in);
     public void departamentos () {
+        System.out.println("Codigo");
+        codigo = sc.nextLine();
         System.out.println("Ingresa nombre del Departamento");
         departamento = sc.nextLine();
         System.out.println("Ingresa la Cantidad de municipios");
@@ -13,11 +15,11 @@ public class IngresoDatos extends RegistroYMuestraDatos{
         System.out.println("Ingrese Region que pertenese");
         region = sc.nextLine();
 
+        lista.add(codigo);
         lista.add(departamento);
         lista.add(municipios);
         lista.add(cabecera);
         lista.add(region);
-        lista.add("");
 
     }
 
