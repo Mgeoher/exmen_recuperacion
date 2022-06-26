@@ -113,6 +113,33 @@ public class RegistroYMuestraDatos {
             }
         }
   }
+
+    static int datosParImpar(String[] t, int pos)  {
+
+        int res;
+        if (pos < t.length) {
+            if (pos % 2 == 0) {
+
+                System.out.println(t[pos] + " esta en una posicion par");
+
+            } else {
+                //System.out.println(t[pos] + " esta en una pocision impar");
+            }
+            datosParImpar(t, pos + 1);
+        }
+        return 1;
+
+    }
+
+    static int datosParImpar(String[] t)
+    {
+        return (datosParImpar(t,0));
+
+
+    }
+    public void paresImpares (){
+        datosParImpar(vectorDepartametos);
+    }
     
 
 }
