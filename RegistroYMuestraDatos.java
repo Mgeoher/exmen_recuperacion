@@ -13,6 +13,7 @@ public class RegistroYMuestraDatos {
     protected String codigo1;
     
     String [] vectorDepartametos;
+
     String [] restoVector;
     protected int indice;
     
@@ -79,7 +80,7 @@ public class RegistroYMuestraDatos {
 
     }
 
-    public static int busquedaVector(String [] arreglo, String buscar) {
+    public static int busquedaVectorDepartamento(String [] arreglo, String buscar) {
         for (int i = 0; i < arreglo.length; i++) {
             if (buscar.equals (arreglo[i])) {
                 return i;
@@ -87,17 +88,31 @@ public class RegistroYMuestraDatos {
         }
         return -1;
     }
-    public void buscarVector(){
+    public void buscarVectordepartamento(){
         System.out.println("Ingresa el nombre del departamneto a buscar");
         String buscar = sc.nextLine();
 
-        int posicion = busquedaVector(vectorDepartametos, buscar);
+        int posicion = busquedaVectorDepartamento(vectorDepartametos, buscar);
         if (posicion != -1) {
             System.out.println("El elemento " + buscar + " existe en la posición: " + posicion );
         } else {
             System.out.println("El elemento  " + buscar + "  NO existe en el arreglo");
         }
     }
+
+  public void buscarLetra() {
+
+        String palabra = String.valueOf(this.vectorDepartametos) + departamento;
+        System.out.println("Ingrese una letra");
+        String letraIngresada= sc.nextLine();
+        char [] vector = palabra.toCharArray();
+        for (int a = 0;a<palabra.length();a++){
+            String letra = String.valueOf(vector[a]);
+            if (letraIngresada.equalsIgnoreCase(letra)){
+                System.out.println("correcto ");
+            }
+        }
+  }
     
 
 }

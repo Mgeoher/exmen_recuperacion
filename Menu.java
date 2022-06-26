@@ -45,10 +45,23 @@ public class Menu extends IngresoDatos{
                 case 4:
                     this.mostrarDatosVectores();
                     break;
-                case 5:
-                    this.buscarVector();
-                    break;
+                case 5: do {
+                    System.out.println( "1-busqueda por nombre " + "2-busqueda por letra " + "0-regresar");
+                    int op1 = sc.nextInt();
+                    switch (op1){
+                        case 0: regresar = false;
+                            break;
+                        case 1:
+                            this.buscarVectordepartamento();
+                            break;
+                        case 2:
+                            this.buscarLetra();
+                            break;
+                        default: System.out.println("Solo numeros 1 y 2");
+                    }
 
+                }while (regresar);
+                    break;
                 case 0:
                     System.out.println("Vuelva pronto");
                     salir = true;
