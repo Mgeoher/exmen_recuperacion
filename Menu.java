@@ -15,7 +15,7 @@ public class Menu extends IngresoDatos{
         do {
             System.out.println("Escibe una opcion");
             System.out.println("1-Ingresar Datos "+"2-Historial de Datos en forma de lista "+ "3-busqueda de datos en lista "+ "4-Mostrar datos por medio de Vectores");
-            System.out.println("5-Busqueda de datos por vectores "+ "6-Mustra de datos en posiciones pares ");
+            System.out.println("5-Busqueda de datos por vectores "+ "6-Mustra de datos en posiciones pares "+ "7-Mustra de datos en posiciones impares" + "0-Salir");
             int opcion = sc.nextInt();
 
             switch (opcion) {
@@ -68,6 +68,8 @@ public class Menu extends IngresoDatos{
                 case 6:
                     this.paresImpares();
                     break;
+                case 7: this.paresImpares1();
+                break;
                 case 0:
                     System.out.println("Vuelva pronto");
                     salir = true;

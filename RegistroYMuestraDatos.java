@@ -11,15 +11,15 @@ public class RegistroYMuestraDatos {
     protected String cabecera;
     protected String region;
     protected String codigo1;
-    
-    String [] vectorDepartametos;
-    String [] vectorCabecera;
 
-    String [] restoVector;
+    String[] vectorDepartametos;
+    String[] vectorCabecera;
+
+    String[] restoVector;
 
     protected int indice;
-    
-    public RegistroYMuestraDatos(){
+
+    public RegistroYMuestraDatos() {
         this.vectorDepartametos = new String[10];
         this.vectorCabecera = new String[10];
         this.restoVector = new String[10];
@@ -58,73 +58,75 @@ public class RegistroYMuestraDatos {
 
     public void registrarDatosVectores() { // registra los datos con vectores
 
-        this.vectorDepartametos [indice] = departamento;
-        this.vectorCabecera [indice] = cabecera;
-        this.restoVector[indice] = "Codigo: "+codigo1+" --> " +"Numero de municipios: " + municipios + " --> " +  "Region: " + region;
+        this.vectorDepartametos[indice] = departamento;
+        this.vectorCabecera[indice] = cabecera;
+        this.restoVector[indice] = "Codigo: " + codigo1 + " --> " + "Numero de municipios: " + municipios + " --> " + "Region: " + region;
 
         this.indice = this.indice + 1;
 
 
     }
+
     public void mostrarDatosVectores() { // muestra el historial con vectores
 
-        
-        for(int i = 0; i<this.vectorDepartametos.length; i++){
-            if(this.vectorDepartametos[i]!=null){
+
+        for (int i = 0; i < this.vectorDepartametos.length; i++) {
+            if (this.vectorDepartametos[i] != null) {
                 System.out.println("departamento:");
                 System.out.println(vectorDepartametos[i]);
             }
         }
-        for(int i = 0; i<this.vectorCabecera.length; i++){
-            if(this.vectorCabecera[i]!=null){
+        for (int i = 0; i < this.vectorCabecera.length; i++) {
+            if (this.vectorCabecera[i] != null) {
                 System.out.println("cabecera departamental:");
                 System.out.println(vectorCabecera[i]);
             }
         }
 
-        for(int i = 0; i<this.restoVector.length; i++){
-            if(this.restoVector[i]!=null){
+        for (int i = 0; i < this.restoVector.length; i++) {
+            if (this.restoVector[i] != null) {
                 System.out.println(restoVector[i]);
             }
         }
 
     }
 
-    public static int busquedaVectorDepartamento(String [] arreglo, String buscar) {
+    public static int busquedaVectorDepartamento(String[] arreglo, String buscar) {
         for (int i = 0; i < arreglo.length; i++) {
-            if (buscar.equals (arreglo[i])) {
+            if (buscar.equals(arreglo[i])) {
                 return i;
             }
         }
         return -1;
     }
-    public void buscarVectordepartamento(){
+
+    public void buscarVectordepartamento() {
         System.out.println("Ingresa el nombre del departamneto a buscar");
         String buscar = sc.nextLine();
 
         int posicion = busquedaVectorDepartamento(vectorDepartametos, buscar);
         if (posicion != -1) {
-            System.out.println("El elemento " + buscar + " existe en la posición: " + posicion );
+            System.out.println("El elemento " + buscar + " existe en la posición: " + posicion);
         } else {
             System.out.println("El elemento  " + buscar + "  NO existe en el arreglo");
         }
     }
 
-  public void buscarLetra() {
+    public void buscarLetra() {
 
         String palabra = String.valueOf(this.vectorDepartametos) + departamento;
         System.out.println("Ingrese una letra");
-        String letraIngresada= sc.nextLine();
-        char [] vector = palabra.toCharArray();
-        for (int a = 0;a<palabra.length();a++){
+        String letraIngresada = sc.nextLine();
+        char[] vector = palabra.toCharArray();
+        for (int a = 0; a < palabra.length(); a++) {
             String letra = String.valueOf(vector[a]);
-            if (letraIngresada.equalsIgnoreCase(letra)){
+            if (letraIngresada.equalsIgnoreCase(letra)) {
                 System.out.println("correcto ");
             }
         }
-  }
+    }
 
-    static int datosParImpar(String[] t, int pos)  {
+    static int datosParImpar(String[] t, int pos) {
 
         int res;
         if (pos < t.length) {
@@ -141,35 +143,64 @@ public class RegistroYMuestraDatos {
 
     }
 
-    static int datosParImpar(String[] t)
-    {
-        return (datosParImpar(t,0));
+    static int datosParImpar(String[] t) {
+        return (datosParImpar(t, 0));
 
 
     }
-    public void paresImpares (){
+
+    public void paresImpares() {
         datosParImpar(vectorDepartametos);
     }
-    public static int busquedaVectorCabecera(String [] arreglo, String buscar) {
+
+    public static int busquedaVectorCabecera(String[] arreglo, String buscar) {
         for (int i = 0; i < arreglo.length; i++) {
-            if (buscar.equals (arreglo[i])) {
+            if (buscar.equals(arreglo[i])) {
                 return i;
             }
         }
         return -1;
     }
-    public void buscarVectorCabecera(){
+
+    public void buscarVectorCabecera() {
         System.out.println("Ingresa el nombre de la cabecera departamental a buscar");
         String buscar = sc.nextLine();
 
         int posicion = busquedaVectorCabecera(vectorCabecera, buscar);
         if (posicion != -1) {
-            System.out.println("El elemento " + buscar + " existe en la posición: " + posicion );
+            System.out.println("El elemento " + buscar + " existe en la posición: " + posicion);
         } else {
             System.out.println("El elemento  " + buscar + "  NO existe en el arreglo");
         }
     }
 
+    static int datosParImpar1(String[] t, int pos) {
+
+        int res;
+        if (pos < t.length) {
+            if (pos % 2 == 0) {
+
+                //System.out.println(t[pos] + " esta en una posicion par");
+
+            } else {
+                System.out.println(t[pos] + " esta en una pocision impar");
+            }
+            datosParImpar1(t, pos + 1);
+        }
+        return 1;
+
+    }
+
+    static int datosParImpar1(String[] t) {
+        return (datosParImpar1(t, 0));
+
+
+    }
+
+    public void paresImpares1() {
+        datosParImpar1(vectorDepartametos);
+
+    }
 }
 
 
