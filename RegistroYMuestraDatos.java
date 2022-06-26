@@ -13,12 +13,15 @@ public class RegistroYMuestraDatos {
     protected String codigo1;
     
     String [] vectorDepartametos;
+    String [] vectorCabecera;
 
     String [] restoVector;
+
     protected int indice;
     
     public RegistroYMuestraDatos(){
         this.vectorDepartametos = new String[10];
+        this.vectorCabecera = new String[10];
         this.restoVector = new String[10];
         this.indice = 0;
     }
@@ -56,8 +59,8 @@ public class RegistroYMuestraDatos {
     public void registrarDatosVectores() { // registra los datos con vectores
 
         this.vectorDepartametos [indice] = departamento;
-        this.restoVector[indice] = "Codigo: "+codigo1+" --> " +"Numero de municipios: " + municipios + " --> " + "Cabecera Departamental: " +  cabecera
-                + " --> "+ "Region: " + region;
+        this.vectorCabecera [indice] = cabecera;
+        this.restoVector[indice] = "Codigo: "+codigo1+" --> " +"Numero de municipios: " + municipios + " --> " +  "Region: " + region;
 
         this.indice = this.indice + 1;
 
@@ -68,7 +71,14 @@ public class RegistroYMuestraDatos {
         
         for(int i = 0; i<this.vectorDepartametos.length; i++){
             if(this.vectorDepartametos[i]!=null){
+                System.out.println("departamento:");
                 System.out.println(vectorDepartametos[i]);
+            }
+        }
+        for(int i = 0; i<this.vectorCabecera.length; i++){
+            if(this.vectorCabecera[i]!=null){
+                System.out.println("cabecera departamental:");
+                System.out.println(vectorCabecera[i]);
             }
         }
 
@@ -140,7 +150,25 @@ public class RegistroYMuestraDatos {
     public void paresImpares (){
         datosParImpar(vectorDepartametos);
     }
-    
+    public static int busquedaVectorCabecera(String [] arreglo, String buscar) {
+        for (int i = 0; i < arreglo.length; i++) {
+            if (buscar.equals (arreglo[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void buscarVectorCabecera(){
+        System.out.println("Ingresa el nombre de la cabecera departamental a buscar");
+        String buscar = sc.nextLine();
+
+        int posicion = busquedaVectorCabecera(vectorCabecera, buscar);
+        if (posicion != -1) {
+            System.out.println("El elemento " + buscar + " existe en la posición: " + posicion );
+        } else {
+            System.out.println("El elemento  " + buscar + "  NO existe en el arreglo");
+        }
+    }
 
 }
 

@@ -46,7 +46,7 @@ public class Menu extends IngresoDatos{
                     this.mostrarDatosVectores();
                     break;
                 case 5: do {
-                    System.out.println( "1-busqueda por nombre " + "2-busqueda por letra " + "0-regresar");
+                    System.out.println( "1-busqueda por nombre " + "2-busqueda por letra " +"3-busqueda por cabecera"+ "0-regresar");
                     int op1 = sc.nextInt();
                     switch (op1){
                         case 0: regresar = false;
@@ -57,7 +57,10 @@ public class Menu extends IngresoDatos{
                         case 2:
                             this.buscarLetra();
                             break;
-                        default: System.out.println("Solo numeros 1 y 2");
+                        case 3:
+                            this.buscarVectorCabecera();
+                            break;
+                        default: System.out.println("Solo numeros 1 y 3");
                     }
 
                 }while (regresar);
